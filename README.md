@@ -12,6 +12,7 @@ do atributo: `disabled="disabled"`
 
 # `<!DOCTYPE html>`
 - Declarada no topo de documentos HTML
+- Todos os outros elementos devem ser descendentes dele 
 - Garante que o browser faça um esforço na tentativa de seguir  
 as especificações relevantes, em vez de usar um modo de  
 renderização diferente e que seja incompatível com algumas  
@@ -29,6 +30,15 @@ especificações
   - Descrição
   - CSS 
   - Conjunto de caracteres
+- Pode ser filho apenas do elemento `<html>`
+- Elementos que podem ser usados dentro de um `<head>` element
+  - `<title>`
+  - `<base>`
+  - `<link>`
+  - `<style>`
+  - `<meta>`
+  - `<script>`
+  - `<noscript>`
 
 # `<meta charset="utf-8">`
 - Define o tipo de codificação dos caracteres que o documento  
@@ -62,6 +72,34 @@ da página
 - Pular níveis de heading deve ser evitado 
 - Toda página deve ter, pelo menos, 1 heading de primeiro  
 nível
+- Cada `<section>` **deve** ter sua própria hierarquia de heading  
+(exemplo) 
+
+```html
+<section>
+
+  <h1>Forest elephants</h1> 
+
+  <section>
+    <h1>Introduction</h1>
+    <p>Nesta seção, nós discutimos os menores elefantes florestais conhecidos.<p>
+  </section>
+
+  <section>
+    <h1>Habitat</h1>
+    <P>Elefantes florestais não vivem em árvores mas entre eles.</p> 
+  </section>
+
+  <aside>
+    <p>Bloco publicitário</p>
+  </aside>
+
+</section>
+
+<footer>
+  <p>(c) 2010 O Exemplo de empresa</p>
+</footer>
+```
 
 # `<!-- comentário -->`
 - Ignorados pelo navegador
@@ -119,7 +157,7 @@ atual
 - Representa o tempo nos formatos: 
   - 24 horas
   - Data do calendário gregoriano
-- Não e adequado para datas específicas que não podem ser  
+- Não é adequado para datas específicas que não podem ser  
 calculadas 
 - Não deve ser utilizado em datas anteriores ao calendário  
 gregoriano 
@@ -169,6 +207,35 @@ gregoriano
 # `<aside>`
 - Um bloco que é relacionado ao conteúdo principal, mas não faz  
 parte dele
+
+# `<footer>`
+- Representa um **rodapé para o conteúdo da seção-pai** mais próxima,  
+que pode ser 
+  - <article>
+  - <aside>
+  - <nav>
+  - <section>
+  - <blockquote>
+  - <body>
+  - <details>
+  - <fieldset>
+  - <figure>
+  - <td>
+- Característico por conter informações sobre
+  - O autor da seção
+  - Direitos autorais 
+  - Links para documentos relacionados 
+- Não deve ser um descendente de um `<address>`, `<header>` ou outro  
+elemento `<footer>`
+- Dicas 
+  - Informações sobre o autor devem ser envolvidas em um `<address>`,  
+  que pode ser filho do `<footer>`
+
+```html
+<footer>
+  Algumas informações de copyright ou talvez alguma informação do autor de um article?
+</footer>
+```
 
 # HTML Semântico 
 - Elementos que têm, de fato, um significado específico / relevante 
