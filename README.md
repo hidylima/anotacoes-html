@@ -140,7 +140,21 @@ gregoriano
   documento
 
 ```html
-<!-- PAREI AQUI -->
+<p>O show começa às <time>20:00</time>.</p>
+```
+
+```html
+<article>
+  <p>Esse artigo foi criado em <time pubdate>2018-07-29</time></p>
+</article>
+<!-- formato ANO-MÊS-DIA -->
+```
+
+```html
+<article>
+  <p>O show é em <time datetime="2018-07-15 23:00">Julho de 2018</time></p>
+</article>
+<!-- formato ANO-MÊS-DIA -->
 ```
 
 # `<div>` 
