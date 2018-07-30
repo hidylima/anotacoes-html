@@ -211,16 +211,16 @@ parte dele
 # `<footer>`
 - Representa um **rodapé para o conteúdo da seção-pai** mais próxima,  
 que pode ser 
-  - <article>
-  - <aside>
-  - <nav>
-  - <section>
-  - <blockquote>
-  - <body>
-  - <details>
-  - <fieldset>
-  - <figure>
-  - <td>
+  - `<article>`
+  - `<aside>`
+  - `<nav>`
+  - `<section>`
+  - `<blockquote>`
+  - `<body>`
+  - `<details>`
+  - `<fieldset>`
+  - `<figure>`
+  - `<td>`
 - Característico por conter informações sobre
   - O autor da seção
   - Direitos autorais 
