@@ -5,10 +5,157 @@
 ![grumpy-cat-attribute-small](https://user-images.githubusercontent.com/29297788/43359655-40a23436-927c-11e8-9e5e-08ec1d87fda3.png)
 - O valor do atributo é especificado entre as aspas duplas 
 
-## Atributos booleanos 
+# Atributos booleanos 
 - São atributos sem valores 
 - Podem ter somente um valor, que geralmente é o mesmo nome  
 do atributo: `disabled="disabled"`
+
+# Conteúdo de fluxo / flow content 
+- Elementos que tipicamente **contém** texto ou conteúdo imbutido 
+  - `<a>`
+  - `<abbr>`
+  - `<address>`
+  - `<article>`
+  - `<aside>`
+  - `<audio>`
+  - `<b>`
+  - `<bdo>`
+  - `<bdi>`
+  - `<blockquote>`
+  - `<br>`
+  - `<button>`
+  - `<canvas>`
+  - `<cite>`
+  - `<code>`
+  - `<command>`
+  - `<data>`
+  - `<datalist>`
+  - `<del>`
+  - `<details>`
+  - `<dfn>`
+  - `<div>`
+  - `<dl>`
+  - `<em>`
+  - `<embed>`
+  - `<fieldset>`
+  - `<figure>`
+  - `<footer>`
+  - `<form>`
+  - `<h1>`
+  - `<h2>`
+  - `<h3>`
+  - `<h4>`
+  - `<h5>`
+  - `<h6>`
+  - `<header>`
+  - `<hgroup>`
+  - `<hr>`
+  - `<i>`
+  - `<iframe>`
+  - `<img>`
+  - `<input>`
+  - `<ins>`
+  - `<kbd>`
+  - `<keygen>`
+  - `<label>`
+  - `<main>`
+  - `<map>`
+  - `<mark>`
+  - `<math>`
+  - `<menu>`
+  - `<meter>`
+  - `<nav>`
+  - `<noscript>`
+  - `<object>`
+  - `<ol>`
+  - `<output>`
+  - `<p>`
+  - `<pre>`
+  - `<progress>`
+  - `<q>`
+  - `<ruby>`
+  - `<s>`
+  - `<samp>`
+  - `<script>`
+  - `<section>`
+  - `<select>`
+  - `<small>`
+  - `<span>`
+  - `<strong>`
+  - `<sub>`
+  - `<sup>`
+  - `<svg>`
+  - `<table>`
+  - `<template>`
+  - `<textarea>`
+  - `<time>`
+  - `<ul>`
+  - `<var>`
+  - `<video>`
+  - `<wbr>`
+
+- Alguns outros elementos pertencem a essa categoria, mas somente se uma condição específica é realizada:
+  - `<area>`, se for um descendente de um elemento `<map>`
+  - `<link>`, se o atributo itemprop estiver presente
+  - `<meta>`, se o atributo itemprop estiver presente
+  - `<style>`, se o atributo scoped estiver presente
+
+# Phrasing content / conteúdo fraseado 
+- Elementos que definem o texto e a marcação que ele contém 
+  - Séries desse tipo de elemento compõem parágrafos 
+- Elementos
+  - `<abbr>`
+  - `<audio>`
+  - `<b>`
+  - `<bdo>`
+  - `<br>`
+  - `<button>`
+  - `<canvas>`
+  - `<cite>`
+  - `<code>`
+  - `<command>`
+  - `<datalist>`
+  - `<dfn>`
+  - `<em>`
+  - `<embed>`
+  - `<i>`
+  - `<iframe>`
+  - `<img>`
+  - `<input>`
+  - `<kbd>`
+  - `<keygen>`
+  - `<label>`
+  - `<mark>`
+  - `<math>`
+  - `<meter>`
+  - `<noscript>`
+  - `<object>`
+  - `<output>`
+  - `<progress>`
+  - `<q>`
+  - `<ruby>`
+  - `<samp>`
+  - `<script>`
+  - `<select>`
+  - `<small>`
+  - `<span>`
+  - `<strong>`
+  - `<sub>`
+  - `<sup>`
+  - `<svg>`
+  - `<textarea>`
+  - `<time>`
+  - `<var>`
+  - `<video>`
+  - `<wbr>`
+- Alguns outros elementos pertencem a essa categoria, mas somente se uma condição específica é realizada:
+  - `<a>`, se contém somente conteúdo fraseado
+  - `<area>`, se for um descendente de um elemento `<map>`
+  - `<del>`, se contém somente conteúdo fraseado
+  - `<ins>`, se contém somente conteúdo fraseado
+  - `<link>`, se o atributo itemprop estiver presente
+  - `<map>`, se contém somente conteúdo fraseado
+  - `<meta>`, se o atributo itemprop estiver presente
 
 # `<!DOCTYPE html>`
 - Declarada no topo de documentos HTML
@@ -194,6 +341,34 @@ gregoriano
 </article>
 <!-- formato ANO-MÊS-DIA -->
 ```
+
+# `<details>`
+- Usado em casos onde o usuário irá obter informações adicionais 
+- Clicável, expande e colapsa informações 
+- Elementos filhos permitidos 
+  - Um elemento `<summary>`, seguido por elementos `flow content`
+- Pode receber o atributo `open="open"`
+  - Boolean
+  - Indica se os detalhes são mostrados ao usuário ao **carregar**  
+  a página 
+  - Se omitido, os detalhes não são mostrados ao carregar a página 
+
+```html
+<details open="open">
+  <summary>alguns detalhes</summary>
+  <p>Mais informações sobre os detalhes</p>
+</details>
+```
+
+![details](https://user-images.githubusercontent.com/29297788/43499849-ea2f5fa2-9523-11e8-88da-4e6ed38a3286.png)
+
+# `<summary>`
+- Utilizado como sumário ou legenda para o conteúdo de um elemento  
+`<details>`
+- Elementos pais permitidos 
+  - `<details>`
+- Elementos filhos permitidos 
+  - Elementos do tipo phrasing content 
 
 # `<div>` 
 - Uma divisão. Não adiciona significado ao conteúdo 
