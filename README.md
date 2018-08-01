@@ -261,6 +261,100 @@ nível
 - Útil para escrever poemas, endereços e outros tipos de  
 texto onde a divisão de linhas é significante 
 
+# `<blockquote>`
+- Citação de bloco 
+- Indica que o texto incluído é uma **longa** citação 
+  - `<q>` é o elemento usado para uma **curta** citação 
+- Conteúdo permitido
+  - Flow content
+- Visualmente renderizado com recuo 
+  - Pode ser alterado com a propriedade `margin`, do CSS 
+- A URL da fonte da citação pode ser passada, através  
+do atributo `cite="URLadress"`
+
+Sintaxe: 
+
+```html
+<blockquote cite="http://developer.mozilla.org">
+  <p>Esta é uma citação tirada da Mozilla Developer Center.</p>
+</blockquote>
+```
+
+Ou sem o `<p>`:
+
+```html
+<blockquote cite="https://en.wikiquote.org/wiki/Marie_Curie">
+  Be less curious about people and more curious about ideas.
+</blockquote>
+```
+
+# `<q>`
+- Usado para citações curtas, que não requerem marcações de parágrafo 
+- Renderiza o elemento com aspas 
+  - Podem ser retiradas com estilos CSS 
+- Conteúdo permitido 
+  - Filhos:
+    - Phrasing content / conteúdo fraseado 
+  - Pais:
+    - Qualquer elemento que aceite phrasing content.
+- A URL da fonte da citação pode ser passada, através  
+do atributo `cite="URLadress"` 
+
+```html
+<p>
+  <q cite="https://www.mozilla.org/en-US/about/history/details/">According to Mozilla's Website,Firefox 1.0 was released in 2004 and became a big success.
+  </q>
+</p>
+```
+
+```html
+<p>
+  In <cite>2001: A Space Odyssey</cite>, Dave asks HAL to open the pod bay door and HAL answers: 
+  <q cite="https://www.imdb.com/title/tt0062622/quotes/qt0396921">
+    I'm sorry, Dave. I'm afraid I can't do that.
+  </q>
+</p>
+```
+
+![hal](https://user-images.githubusercontent.com/29297788/43541931-01535674-95a2-11e8-8877-9f24f958b80d.png)
+
+# `<cite>`
+- Descreve uma referência à um trabalho artístico 
+  - Livros 
+  - Filmes 
+  - Teatro
+  - Redação
+  - Poema
+  - Partitura
+  - Música
+  - Roteiro
+  - Séries de TV
+  - Game
+  - Escultura
+  - Pintura
+  - Opera
+  - Musical
+  - Programa de computador
+  - Website
+  - Blog post ou comentário
+  - Forum post ou comentário
+  - Um tweet
+  - Declaração oral 
+- Deve incluir o título do trabalho **ou** uma URL de referência  
+e o nome do autor 
+- Usado para incluir uma referência à fonte do material citado  
+contido em um elemento `<blockquote>` ou `<q>`
+- Renderizado em itálico, por default 
+- Inclui apenas atributos globais 
+
+```html
+<p>
+  More information can be found in <cite>[ISO-0000]</cite>
+</p>
+```
+
+![cite the citation element html hypertext markup language mdn](https://user-images.githubusercontent.com/29297788/43541667-5758e224-95a1-11e8-8054-a91b31b41523.png)
+
 # `<address>`
 - Fornece informações de contato para seu ancestral  
 `<article>` ou `<body>` mais próximo 
