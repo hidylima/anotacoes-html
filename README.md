@@ -267,36 +267,48 @@ texto onde a divisão de linhas é significante
   - `<q>` é o elemento usado para uma **curta** citação 
 - Conteúdo permitido
   - Flow content
+- Pais permitidos
+  - Qualquer elemento que aceita flow content
 - Visualmente renderizado com recuo 
   - Pode ser alterado com a propriedade `margin`, do CSS 
 - A URL da fonte da citação pode ser passada, através  
 do atributo `cite="URLadress"`
-
-Sintaxe: 
+- Uma representação textual da fonte pode ser passada  
+usando o elemento `<cite>`
 
 ```html
-<blockquote cite="http://developer.mozilla.org">
-  <p>Esta é uma citação tirada da Mozilla Developer Center.</p>
+<blockquote cite="https://www.huxley.net/bnw/four.html">
+  <p>Words can be like X-rays, if you use them properly – they'll go through anything. You readand you're pierced.</p>
 </blockquote>
+<cite>– Aldous Huxley, Brave New World</cite>
 ```
 
-Ou sem o `<p>`:
+![b](https://user-images.githubusercontent.com/29297788/43620554-a4b28440-96a9-11e8-9342-874d2ae91704.png)
 
 ```html
-<blockquote cite="https://en.wikiquote.org/wiki/Marie_Curie">
-  Be less curious about people and more curious about ideas.
+<blockquote cite="https://tools.ietf.org/html/rfc1149">
+  <p>Avian carriers can provide high delay, low
+    throughput, and low altitude service.  The
+    connection topology is limited to a single
+    point-to-point path for each carrier, used with
+    standard carriers, but many carriers can be used
+    without significant interference with each other,
+    outside of early spring.  This is because of the 3D
+    ether space available to the carriers, in contrast
+    to the 1D ether used by IEEE802.3.  The carriers
+    have an intrinsic collision avoidance system, which
+    increases availability.</p>
 </blockquote>
 ```
 
 # `<q>`
-- Usado para citações curtas, que não requerem marcações de parágrafo 
+- Usado para citações curtas, inline 
 - Renderiza o elemento com aspas 
   - Podem ser retiradas com estilos CSS 
-- Conteúdo permitido 
-  - Filhos:
-    - Phrasing content / conteúdo fraseado 
-  - Pais:
-    - Qualquer elemento que aceite phrasing content.
+- Filhos permitidos:
+  - Phrasing content / conteúdo fraseado 
+- Pais permitidos:
+  - Qualquer elemento que aceite phrasing content.
 - A URL da fonte da citação pode ser passada, através  
 do atributo `cite="URLadress"` 
 
@@ -315,11 +327,11 @@ do atributo `cite="URLadress"`
   </q>
 </p>
 ```
-
 ![hal](https://user-images.githubusercontent.com/29297788/43541931-01535674-95a2-11e8-8877-9f24f958b80d.png)
 
+
 # `<cite>`
-- Descreve uma referência à um trabalho artístico 
+- Descreve uma referência à um trabalho artístico citado 
   - Livros 
   - Filmes 
   - Teatro
@@ -340,12 +352,13 @@ do atributo `cite="URLadress"`
   - Forum post ou comentário
   - Um tweet
   - Declaração oral 
-- Deve incluir o título do trabalho **ou** uma URL de referência  
-e o nome do autor 
+- Deve incluir o título **ou** a uma URL do trabalho 
 - Usado para incluir uma referência à fonte do material citado  
 contido em um elemento `<blockquote>` ou `<q>`
 - Renderizado em itálico, por default 
 - Inclui apenas atributos globais 
+- Conteúdo permitido: Phrasing content
+- Pais permitidos: qualquer elemento que aceite phrasing content 
 
 ```html
 <p>
@@ -354,6 +367,23 @@ contido em um elemento `<blockquote>` ou `<q>`
 ```
 
 ![cite the citation element html hypertext markup language mdn](https://user-images.githubusercontent.com/29297788/43541667-5758e224-95a1-11e8-8054-a91b31b41523.png)
+
+```html
+  <blockquote>
+    <p>It was a bright cold day in April, and the clocks were striking thirteen.</p>
+    <footer>
+      First sentence in
+      <cite>
+        <a href="http://www.george-orwell.org/1984/0.html" target="_blank">
+          <i>Nineteen Eighty-Four</i>
+        </a>
+        by George Orwell (Part 1, Chapter 1)
+      </cite>
+    </footer>
+  </blockquote>
+```
+
+![q](https://user-images.githubusercontent.com/29297788/43621136-4104e8fe-96ac-11e8-9372-e0c5e8c76ef5.png)
 
 # `<address>`
 - Fornece informações de contato para seu ancestral  
@@ -545,3 +575,35 @@ serão válidos
 - [Lista oficial](https://dev.w3.org/html5/html-author/charref)
 ![image](https://user-images.githubusercontent.com/29297788/42913867-a5ac09bc-8acd-11e8-89a2-5d9f07a629a9.png)
 ![image](https://user-images.githubusercontent.com/29297788/42913819-6bf0b43e-8acd-11e8-870b-f3944354b3ef.png)
+
+# `<fieldset>`
+- Elemento usado para agrupar, por partes, elementos dentro de um  
+`<form>` 
+  - `<legend>`, `<input>`, `<label>`
+- Contém atributos 
+  - `disabled`
+    - Atributo booleano
+    - Caso setado, todos os elementos de formulário descendentes do  
+    `<fieldset>` serão desabilitados, ou seja, não serão editáveis,  
+    submetidos e receptíveis à eventos do browser 
+- Deve conter um `<legend>` como primeiro filho 
+
+```html
+  <form>
+    <fieldset>
+      <legend>Choose your favorite monster</legend>
+
+      <input type="radio" id="kraken" name="monster">
+      <label for="kraken">Kraken</label><br>
+
+      <input type="radio" id="sasquatch" name="monster">
+      <label for="sasquatch">Sasquatch</label><br>
+
+      <input type="radio" id="mothman" name="monster">
+      <label for="mothman">Mothman</label><br>
+    </fieldset>
+  </form>
+```
+
+![fieldset](https://user-images.githubusercontent.com/29297788/43621620-dbd44120-96ae-11e8-8383-285153f82ef5.png)
+
