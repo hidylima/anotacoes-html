@@ -580,13 +580,43 @@ serão válidos
 - Elemento usado para agrupar, por partes, elementos dentro de um  
 `<form>` 
   - `<legend>`, `<input>`, `<label>`
-- Contém atributos 
-  - `disabled`
+- Aceita atributos: 
+  - `disabled` (exemplo 3)
     - Atributo booleano
     - Caso setado, todos os elementos de formulário descendentes do  
     `<fieldset>` serão desabilitados, ou seja, não serão editáveis,  
     submetidos e receptíveis à eventos do browser 
+    - Browsers renderizam, por default, o elemento esmaecido 
+    - Elementos de formulário dentro de um descendente `<legend>`  
+    não são desabilitados
+  - `form`
+    - Pega o valor do ID do elemento `<form>` que é desejado que  
+    o `<fieldset>` faça parte, mesmo que ele não esteja dentro do  
+    formulário.
+      - Caso não especificado, o valor default é o do ID do  
+      `<form>` pai mais próximo 
+  - `name`
+    - Nome associado com o grupo 
 - Deve conter um `<legend>` como primeiro filho 
+  - É o label fo `<fieldset>`
+- Estilo de renderização padrão
+  - `display: block;`
+  - Borda de 2px ao redor do conteúdo
+  - Padding
+  - Se tem `<legend>`, ele é sobreposto na borda superior 
+- Categorias de conteúdo: 
+  - Flow content
+  - Sectioning root
+  - Listed
+  - Form-associated
+- Conteúdo permitido
+  - `<legend>` opcional
+  - Flow-content 
+- Pais permitidos
+  - Qualquer elemento que aceite flow-content
+- Funções ARIA permitidas
+  - group
+  - presentation
 
 ```html
   <form>
@@ -607,3 +637,36 @@ serão válidos
 
 ![fieldset](https://user-images.githubusercontent.com/29297788/43621620-dbd44120-96ae-11e8-8383-285153f82ef5.png)
 
+fieldset simples: 
+
+```html
+  <form action="#">
+    <fieldset>
+      <legend>Simple fieldset</legend>
+      <input type="radio" id="radio">
+      <label for="radio">Spirit of radio</label>
+    </fieldset>
+  </form>
+```
+
+![simple-fieldset](https://user-images.githubusercontent.com/29297788/43679664-20c30a86-97ff-11e8-84ea-b04c65fd1fb1.png)
+
+exemplo 3:
+
+```html
+  <form action="#">
+    <fieldset disabled>
+      <legend>Disabled fieldset</legend>
+      <div>
+        <label for="name">Name: </label>
+        <input type="name" id="text" value="Chris">
+      </div>
+      <div>
+        <label for="pwd">Archetype: </label>
+        <input type="password" id="text" value="Wookie">
+      </div>
+    </fieldset>
+  </form>
+```
+
+![disabled-fieldset](https://user-images.githubusercontent.com/29297788/43679684-e95e7994-97ff-11e8-9a6b-1f5068ca31ab.png)
