@@ -670,3 +670,34 @@ exemplo 3:
 ```
 
 ![disabled-fieldset](https://user-images.githubusercontent.com/29297788/43679684-e95e7994-97ff-11e8-9a6b-1f5068ca31ab.png)
+
+# `<meta>`
+- Representa metadata que não pode ser representada por outros  
+elementos meta relacionados, como `<base>`, `<link>`, `<script>`,  
+`<style>` ou `<title>` 
+  - Metadata é uma informação que descreve uma informação 
+    - Um documento HTML é uma informação, mas também  
+    pode conter metadata em seu elemento `<head>`,  
+    que descreve o documento, por exemplo, quem o escreveu  
+    e seu sumário
+- Não possui tag de fechamento
+- Categorias de conteúdo 
+  - Conteúdo de metadata
+  - Se o atributo `itemprop` estiver presente, flow content e  
+  phrasing content
+- Conteúdo permitido
+  - Nenhum. É um elemento vazio
+- Pais permitidos
+  - Para `<meta charset>` e `<meta http-equiv>`, um elemento  
+  `<head>`
+    - Se `http-equiv` não for uma declaração de codificação,  
+    também pode estar dentro de um elemento `<noscript>`, se  
+    dentro de um elemento `<head>`
+- Funções ARIA permitidas 
+  - Nenhuma 
+- Atributos 
+  - Contém os atributos globais 
+  - O atributo `name` possui um significado específico para o elemento  
+  `<meta>`
+  - O atributo `itemprop` não deve ser setado no mesmo elemento `<meta>`  
+  que tem qualquer atributo `name`, `http-equiv` ou `charset`
