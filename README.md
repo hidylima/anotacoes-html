@@ -701,3 +701,97 @@ elementos meta relacionados, como `<base>`, `<link>`, `<script>`,
   `<meta>`
   - O atributo `itemprop` não deve ser setado no mesmo elemento `<meta>`  
   que tem qualquer atributo `name`, `http-equiv` ou `charset`
+  - `charset` declara a codificação dos caracteres da página 
+    - Comumente usado com o valor UTF-8, codificação mais comum  
+    utilizada na internet 
+  - `content` contém o valor para os atributos `http-equiv` ou  
+  `name`, dependendo de qual for usado 
+  - `http-equiv` contém o nome de um header HTTP 
+    - Define uma instrução que altera o comportamento entre  
+    servidor e browser 
+    - O valor da instrução é definido dentro do atributo `content`  
+    e pode ser um dos seguintes valores: 
+      - `"content-security-policy"` permite que autores da página  
+      definam uma polítia de privacidade para a página atual.  
+      Políticas de privacidades especificam, em sua maioria,  
+      servidores permitidos e pontos de scripts que ajudam na  
+      proteção contra ataques de scripting cross-sites 
+    - `"refresh"` especifica: 
+      - A quantidade de segundos até a página ser recarregada (o  
+      atributo `content` deve ser um número inteiro positivo) -  
+      exemplo 2
+      - A quantidade de segundos até a página redirecionar para  
+      outra página (o atributo `content` deve ser um número inteiro  
+      positivo, seguido pela string `';url='` e uma url válida).  
+      Exemplo 1
+      - `"X-UA-Compatible"` define para qual versão do Internet  
+      Explorer a página deve ser renderizada 
+  - `name` define o nome de uma parte de metadados em nível  
+  de documento
+    - Não deve ser setado caso um dos atributos abaixo já estejam  
+    especificados: 
+      - `itemprop`
+      - `http-equiv`
+      - `charset`
+    - É associado ao valor contido no atributo `content`
+    - Valores possíveis: 
+      - `application-name` define o nome da aplicação que  
+      está rodando na página web. 
+        - Browsers podem usá-lo para identificar a aplicação.  
+        É diferente do elemento `<title>`, que normalmente contém  
+        o nome da aplicação, mas também pode conter informações  
+        como o ome do documento ou status.
+        - Páginas web simples não devem definir um `application-name`
+      - `author` define o nome do autor da página
+      - `description` contém um curto e preciso sumário do  
+      conteúdo da página 
+        - Alguns browsers usam a descrição como descrição  
+        default de páginas favoritadas 
+      - `generator` contém o identificador do software que  
+      gerou a página 
+      - `keywords` contém palavras relevantes sobre o conteúdo  
+      da página, seperadas por vírgulas 
+      - `referrer` controla o header HTTP Referer, anexado para  
+      enviar requests do documento 
+      - `creator` define o nome do criador do documento, como  
+      a organização ou instituição. Se houver mais de um,  
+      diversos elementos `<meta>` devem ser utilizados 
+      - `googlebot` sinônimo do `robots`. É seguido apenas pelo  
+      Googlebot, o rastreador de indexação do google 
+      - `publisher` define o nome do editor / publicador do  
+      documento 
+      - `robots` define o comportamento que rastreadores  
+      cooperativos, ou "robôs", devem usar com a página.  
+      Separa valores por vírgula
+      - `viewport` dá dicas sobre o tamanho inicial da tela.  
+      Usada apenas por dispositivos mobile. 
+        - Define as regras de dimensões e escala para a tela  
+        (exemplo 3)
+- Deve ser a primeira tag filha do elemento `head`
+
+exemplo 1:
+
+```html
+  <!-- Redireciona a página após 3 segundos -->
+  <meta http-equiv="refresh" content="3;url=https://www.mozilla.org/pt-BR/">
+```
+
+exemplo 1.1: 
+
+```html
+  <!-- Redireciona a página imediatamente -->
+  <meta http-equiv="refresh" content="0;url=https://www.mozilla.org/pt-BR/">
+```
+
+exemplo 2:
+
+```html
+  <!-- Recarrega a página após 2 segundos -->
+  <meta http-equiv="refresh" content="2">
+```
+
+exemplo 3: 
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
