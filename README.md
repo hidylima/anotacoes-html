@@ -1,3 +1,231 @@
+# Categorias de conteúdo 
+- Cada elemento HTML é membro de uma ou mais categorias de conteúdo.  
+Essas categorias agrupam elementos que contém características em  
+comum
+- Tipos de categorias de conteúdo: 
+  - Categorias de conteúdo principal, que descrevem regras comuns  
+  de conteúdos compartilhadas entre muitos elementos
+    - Metadata content: elementos que pertencem a esta categoria  
+    modificam a apresentação ou o comportamento do resto do  
+    documento, seta links para outros documentos ou transporta  
+    outras informações. 
+      - Elementos: 
+        - `<base>`
+        - `<link>`
+        - `<meta>`
+        - `<noscript>`
+        - `<script>`
+        - `<style>`
+        - `<title>`
+    - Flow content: Seus elementos contém, tipicamente, texto ou  
+    conteúdo inbutido
+      - Elementos: 
+        - `<a>`
+        - `<abbr>`
+        - `<address>`
+        - `<article>`
+        - `<aside>`
+        - `<audio>`
+        - `<b>`
+        - `<bdo>`
+        - `<bdi>`
+        - `<blockquote>`
+        - `<br>`
+        - `<button>`
+        - `<canvas>`
+        - `<cite>`
+        - `<code>`
+        - `<data>`
+        - `<datalist>`
+        - `<del>`
+        - `<details>`
+        - `<dfn>`
+        - `<div>`
+        - `<dl>`
+        - `<em>`
+        - `<embed>`
+        - `<fieldset>`
+        - `<figure>`
+        - `<footer>`
+        - `<form>`
+        - `<h1>`
+        - `<h2>`
+        - `<h3>`
+        - `<h4>`
+        - `<h5>`
+        - `<h6>`
+        - `<header>`
+        - `<hgroup>`
+        - `<hr>`
+        - `<i>`
+        - `<iframe>`
+        - `<img>`
+        - `<input>`
+        - `<ins>`
+        - `<kbd>`
+        - `<label>`
+        - `<main>`
+        - `<map>`
+        - `<mark>`
+        - `<math>`
+        - `<menu>`
+        - `<meter>`
+        - `<nav>`
+        - `<noscript>`
+        - `<object>`
+        - `<ol>`
+        - `<output>`
+        - `<p>`
+        - `<pre>`
+        - `<progress>`
+        - `<q>`
+        - `<ruby>`
+        - `<s>`
+        - `<samp>`
+        - `<script>`
+        - `<section>`
+        - `<select>`
+        - `<small>`
+        - `<span>`
+        - `<strong>`
+        - `<sub>`
+        - `<sup>`
+        - `<svg>`
+        - `<table>`
+        - `<template>`
+        - `<textarea>`
+        - `<time>`
+        - `<ul>`
+        - `<var>`
+        - `<video>`
+        - `<wbr> `
+        - e texto.
+       - Alguns outros elementos que pertencem a esta categoria,  
+       apenas se uma condição específica for realizada: 
+         - `<area>`, se for um descendente de um elemento `<map>`
+         - `<link>`, se o atributo `itemprop` estiver presente
+         - `<meta>`, se o atributo `itemprop` estiver presente
+         - `<style>`, se o atributo `scoped` estiver presente
+    - Sectioning Content
+      - Elementos que criam uma section no esboço atual, que  
+      definem escopo dos elementos `<header>`, `<footer>` e  
+      heading content.
+        - Elementos: 
+          - `<article>`
+          - `<aside>`
+          - `<nav>`
+          - `<section>`
+      - Não confundir esse modelo de conteúdo com a categoria  
+      sectioning root, que isola seu conteúdo do esboço regular 
+    - Heading content 
+      - Define o título de uma seção, se marcado por um elemento  
+      sectioning content, ou implicitamente definido pelo próprio  
+      heading content
+        - Elementos: 
+          - `<h1>`
+          - `<h2>`
+          - `<h3>`
+          - `<h4>`
+          - `<h5>`
+          - `<h6>`
+          - `<hgroup>`
+    - Phrasing content 
+      - Define o texto e a marcação que ele contém 
+        - Elementos: 
+          - `<abbr>`
+          - `<audio>`
+          - `<b>`
+          - `<bdo>`
+          - `<br>`
+          - `<button>`
+          - `<canvas>`
+          - `<cite>`
+          - `<code>`
+          - `<data>`
+          - `<datalist>`
+          - `<dfn>`
+          - `<em>`
+          - `<embed>`
+          - `<i>`
+          - `<iframe>`
+          - `<img>`
+          - `<input>`
+          - `<kbd>`
+          - `<label>`
+          - `<mark>`
+          - `<math>`
+          - `<meter>`
+          - `<noscript>`
+          - `<object>`
+          - `<output>`
+          - `<progress>`
+          - `<q>`
+          - `<ruby>`
+          - `<samp>`
+          - `<script>`
+          - `<select>`
+          - `<small>`
+          - `<span>`
+          - `<strong>`
+          - `<sub>`
+          - `<sup>`
+          - `<svg>`
+          - `<textarea>`
+          - `<time>`
+          - `<var>`
+          - `<video>`
+          - `<wbr> `
+          - E texto plano que não consista em apenas em caracteres de  
+          espaço em branco 
+        - Alguns outros elementos que pertencem a esta categoria,  
+        apenas se uma condição específica for realizada: 
+          - `<a>`, se contém apenas um phrazing content
+          - `<area>`, se for descendente de um elemento `<map>`
+          - `<del>`, se contém apenas um phrazing content
+          - `<ins>`, se contém apenas um phrazing content
+          - `<link>`, se o atributo `itemprop` estiver presente
+          - `<map>`, se contém apenas um phrazing content
+          - `<meta>`, se o atributo `itemprop` estiver presente
+  - Categoria relacionada à formulário, que descreve regras em 
+  comum para seus elementos 
+  - Categoria de conteúdo específico, que descreve raras categorias  
+  compartilhadas apenas por alguns elementos, às vezes em apenas um  
+  contexto específico 
+
+![content_categories_venn](https://user-images.githubusercontent.com/29297788/43872422-0234a7da-9b58-11e8-9465-d892a224cc87.png)
+
+# `itemprop`
+- Utilizado para adicionar propriedades a um item. 
+- Todo elemento HTML pode ter este atributo especificado 
+- Consiste em um par de nome e valor 
+- Cada par de nome e valor é chamado de propriedade 
+- Um grupo de uma ou mais propriedades forma um item 
+- Os valores das propriedades são ou um texto ou uma URL  
+e pode ser associadas a uma grande variedade de elementos  
+incluindo:
+  - `<audio>`
+  - `<embed>`
+  - `<iframe>`
+  - `<img>`
+  - `<link>`
+  - `<object>`
+  - `<source>`
+  - `<track>`
+  - `<video>`
+
+```html
+  <div itemscope itemtype="http://schema.org/Movie">
+    <h1 itemprop="name">Avatar</h1>
+    <span>Director:
+      <span itemprop="director">James Cameron</span>
+      <span>(born August 16, 1954)</span>
+      <span itemprop="genre">Science Fiction</span>
+      <a href="../movies/avatar-theatrical-trailer.html" itemprop="trailer">Trailer</a>
+  </div>
+```
+
+![itemprop html hypertext markup language mdn](https://user-images.githubusercontent.com/29297788/43873784-737f1a3c-9b5e-11e8-839d-516a3c94f0ba.png)
+
 # Anatomia de um elemento html 
 ![grumpy-cat-small](https://user-images.githubusercontent.com/29297788/43359652-1c286ff8-927c-11e8-97cf-d101772ccab9.png)
 
@@ -27,7 +255,6 @@ do atributo: `disabled="disabled"`
   - `<canvas>`
   - `<cite>`
   - `<code>`
-  - `<command>`
   - `<data>`
   - `<datalist>`
   - `<del>`
@@ -56,7 +283,6 @@ do atributo: `disabled="disabled"`
   - `<input>`
   - `<ins>`
   - `<kbd>`
-  - `<keygen>`
   - `<label>`
   - `<main>`
   - `<map>`
@@ -113,7 +339,6 @@ do atributo: `disabled="disabled"`
   - `<canvas>`
   - `<cite>`
   - `<code>`
-  - `<command>`
   - `<datalist>`
   - `<dfn>`
   - `<em>`
@@ -123,7 +348,6 @@ do atributo: `disabled="disabled"`
   - `<img>`
   - `<input>`
   - `<kbd>`
-  - `<keygen>`
   - `<label>`
   - `<mark>`
   - `<math>`
@@ -578,7 +802,7 @@ serão válidos
 
 # `<fieldset>`
 - Elemento usado para agrupar, por partes, elementos dentro de um  
-`<form>` 
+`<form>`: 
   - `<legend>`, `<input>`, `<label>`
 - Aceita atributos: 
   - `disabled` (exemplo 3)
